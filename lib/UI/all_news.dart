@@ -30,7 +30,7 @@ class _AllNewsState extends State<AllNews> {
                 itemCount: articleList.length,
               );
             }
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }),

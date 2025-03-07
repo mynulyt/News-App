@@ -17,8 +17,8 @@ class NewsItemList extends StatelessWidget {
                 builder: (context) => NewsDetailes(newsModel: newsModel)));
       },
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 8),
-        margin: EdgeInsets.symmetric(horizontal: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        margin: const EdgeInsets.symmetric(horizontal: 12),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -28,49 +28,47 @@ class NewsItemList extends StatelessWidget {
               fit: BoxFit.fitWidth,
               imageUrl: newsModel.urlToImage.toString(),
               placeholder: (context, url) =>
-                  Center(child: CircularProgressIndicator()),
-              errorWidget: (context, url, error) => Icon(Icons.error),
+                  const Center(child: CircularProgressIndicator()),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
             Row(
               children: [
                 Container(
-                  child: Text(
-                    newsModel.source!.name.toString(),
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white),
-                  ),
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
                     color: Colors.red,
                     borderRadius: BorderRadius.circular(16.0),
                   ),
+                  child: Text(
+                    newsModel.source!.name.toString(),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Text(
                   newsModel.publishedAt.toString(),
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 6,
             ),
             Text(
-              newsModel.author == null
-                  ? ""
-                  : "Written by" + newsModel.author.toString(),
-              style: TextStyle(fontWeight: FontWeight.w500),
+              newsModel.author == null ? "" : "Written by${newsModel.author}",
+              style: const TextStyle(fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 6,
             ),
             Text(
               newsModel.title.toString(),
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 6,
             )
           ],

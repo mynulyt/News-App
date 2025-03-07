@@ -29,56 +29,56 @@ class _NewsDetailesState extends State<NewsDetailes> {
               fit: BoxFit.fitWidth,
               imageUrl: widget.newsModel.urlToImage.toString(),
               placeholder: (context, url) =>
-                  Center(child: CircularProgressIndicator()),
-              errorWidget: (context, url, error) => Icon(Icons.error),
+                  const Center(child: CircularProgressIndicator()),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
-            SizedBox(
+            const SizedBox(
               height: 6,
             ),
             Row(
               children: [
                 Container(
-                  child: Text(
-                    widget.newsModel.source!.name.toString(),
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white),
-                  ),
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
                     color: Colors.red,
                     borderRadius: BorderRadius.circular(16.0),
                   ),
+                  child: Text(
+                    widget.newsModel.source!.name.toString(),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Text(
                   widget.newsModel.publishedAt.toString(),
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 6,
             ),
             Text(
               widget.newsModel.author == null
                   ? ""
-                  : "Written by" + widget.newsModel.author.toString(),
-              style: TextStyle(fontWeight: FontWeight.w500),
+                  : "Written by${widget.newsModel.author}",
+              style: const TextStyle(fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 6,
             ),
             Text(
               widget.newsModel.title.toString(),
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 6,
             ),
             Text(widget.newsModel.description.toString()),
-            SizedBox(
+            const SizedBox(
               height: 6,
             ),
             Center(
@@ -89,7 +89,7 @@ class _NewsDetailesState extends State<NewsDetailes> {
                       throw Exception("Could not lauch");
                     }
                   },
-                  child: Text("Red More...")),
+                  child: const Text("Read More...")),
             ),
           ],
         ),

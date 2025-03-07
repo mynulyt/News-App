@@ -16,8 +16,8 @@ class _HomePageState extends State<HomePage> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Center(
-              child: const Text(
+          title: const Center(
+              child: Text(
             "THE BGC NEWS",
             style: TextStyle(fontWeight: FontWeight.bold),
           )),

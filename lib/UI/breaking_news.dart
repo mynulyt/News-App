@@ -30,7 +30,7 @@ class _BreakingNewsState extends State<BreakingNews> {
                 itemCount: articleList.length,
               );
             }
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }),
